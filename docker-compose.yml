@@ -1,0 +1,32 @@
+# To execute this docker-compose yml file use `docker-compose -f docker-compose-e2e.yml up -d`
+version: "3"
+services:
+  selenium-hub:
+    image: selenium/hub
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+  chrome:
+    # image: selenium/node-chrome
+    image: selenium/node-chrome-debug
+    volumes:
+      - /dev/shm:/dev/shm selenium/node-chrome
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+    ports:
+      - "4502:5900"
+  firefox:
+    # image: selenium/node-firefox
+    image: selenium/node-firefox-debug
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+    ports:
+      - "4501:5900"
