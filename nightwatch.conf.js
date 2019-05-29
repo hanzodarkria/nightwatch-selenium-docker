@@ -2,6 +2,8 @@ const args = require('minimist')(process.argv);
 
 const isProd = args['grid'] === 'true';
 
+const SELENIUM_HOST = "YOUR OWN SELENIUM DOCKER CONTAINER IP";
+
 const FIREFOX_CONF = {
 	browserName: 'firefox',
 	javascriptEnabled: true,
@@ -17,7 +19,7 @@ const CHROME_CONF = {
 const DEFAULT_CONF = {
 	launch_url: "http://localhost",
 	selenium_port: 4444,
-	selenium_host: "172.19.0.2",
+	selenium_host: SELENIUM_HOST,
 	silent: true,
 	screenshots: {
 		enabled: true,
@@ -42,7 +44,7 @@ const SELENIUM_CONFIGURATION = {
 	"start_process": isProd,
 	"server_path": "node_modules/selenium-server-standalone/index.jar",
 	"log_path": "logs",
-	"host": "127.0.0.1",
+	"host": "localhost",
 	"port": 4444,
 	"cli_args": {
 		"trustAllSSLCertificates": true,

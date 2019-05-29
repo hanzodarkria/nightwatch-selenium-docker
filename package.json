@@ -1,5 +1,5 @@
 {
-  "name": "nightwatch-selenium-docker",
+  "name": "nightwatch-selenium-docker-starter",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "test:e2e": "node_modules/nightwatch/bin/nightwatch -e firefox,chrome",
     "test:prod": "node_modules/nightwatch/bin/nightwatch --grid=true -e firefox,chrome"
   },
-  "repository": "https://github.com/hanzodarkria/nightwatch-selenium-docker.git",
+  "repository": "https://github.com/hanzodarkria/nightwatch-selenium-docker-starter.git",
   "author": "King Larce Cortes <ts-kinglarce.cortes@rakuten.com>",
   "license": "MIT",
   "dependencies": {

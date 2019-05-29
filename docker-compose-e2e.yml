@@ -17,7 +17,7 @@ services:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
     ports:
-      - "4502:5900"
+      - "5900:5900"
   firefox:
     # image: selenium/node-firefox
     image: selenium/node-firefox-debug
@@ -29,4 +29,4 @@ services:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
     ports:
-      - "4501:5900"
+      - "5901:5900"
